@@ -1,2 +1,8 @@
 ---
 # defaults file for roles/ansible-role-powerline-fonts
+
+powerline_fonts_packages:
+  - fontconfig
+powerline_fonts_system_font_directory: /usr/share/fonts/truetype
+powerline_fonts_install:
+  - font: DejaVuSansMono

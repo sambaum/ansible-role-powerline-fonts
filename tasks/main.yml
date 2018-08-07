@@ -1,2 +1,18 @@
 ---
 # tasks file for roles/ansible-role-powerline-fonts
+
+- name: install packages
+  package:
+    name: "{{ powerline_fonts_packages }}"
+
+- name: Copy fonts
+  copy:
+    src: "files/fonts/{{ item.font }}"
+    dest: "{{ powerline_fonts_system_font_directory }}/{{ item.font }}"
+  with_items:
+    - "{{ powerline_fonts_install }}"
+
+- name: reset font cache
+  become: yes
+  command: fc-cache -f -v
+  changed_when: false
