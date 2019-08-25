@@ -6,3 +6,4 @@ powerline_fonts_packages:
 powerline_fonts_system_font_directory: /usr/share/fonts/truetype
 powerline_fonts_install:
   - font: DejaVuSansMono
+  - font: DejaVuSansMonoNerdFonts
